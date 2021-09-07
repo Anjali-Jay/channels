@@ -1,10 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'signup_login_base.html' %}
 {% block title %}Sign Up{% endblock title %}
 {% block body %}
 
 
 <form class="container" action="{% url 'signup' %}" method="POST">
 	{% csrf_token %}
+  <div class="form-control" id="form-block">
+  <h2 id="form-title"> Sign Up </h2>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Username</label>
     <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
@@ -23,7 +25,15 @@
   </div>
  
   <button type="submit" class="btn btn-primary">Submit</button>
+
+<div class="mb-3">
+          <div class="d-flex justify-content-center links">
+            Already have an account? <a href="{% url 'login' %}" class="ml-2"> Login</a>
+          </div>
+        </div>
+</div>
 </form>
+
 
 
 {% endblock body %}

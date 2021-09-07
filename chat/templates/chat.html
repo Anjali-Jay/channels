@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 {% block title %}chat{% endblock title %}
 {% block body %}
+
+{% include 'navbar.html' %}
+
+<div class="form-control">
 <div class="container d-flex justify-content-around flex-column" style="height: 100vh;">
-<h1 class="text-center text-success">P-Chat</h1>	
+<h1 class="text-center text-success">Group Chat</h1>	
 	<div class="chat flex-column justify-content-between" style="overflow-y: scroll;height: 70%;">
 		 
 	</div>
 	<input type="text" placeholder="message" id="message" class="form-control">
 	<button class="btn btn-outline-success">Send</button>
 	<h2 id="warning"></h2>
+</div>
 </div>
 
 {% endblock body %}
@@ -28,7 +33,7 @@
 			}))	
 		})
 
-		const button = document.querySelector("button");
+		const button = document.querySelector(".btn");
 		button.addEventListener("click",() =>{
 			
 			if (con){
